@@ -1,0 +1,8 @@
+pandas
+numpy
+arch
+statsmodels
+scipy
+yfinance
+plotly
+jupyter
