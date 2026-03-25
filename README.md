@@ -48,7 +48,7 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
 
 ## Results & outputs
 
-- 📊 **Interactive charts** (Plotly) showing:
+- 📊 **Interactive Bloomberg-style charts** (Plotly) showing:
   - Historical price and returns
   - VaR estimates over time for each methodology
   - Actual return vs. VaR comparison (backtesting view)
