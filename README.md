@@ -32,7 +32,8 @@ A key feature is the integration of **relevant macroeconomic and political event
 - Compares **multiple volatility estimates** side by side (simple, exponential, GARCH)
 - Performs **backtesting:** actual returns vs. VaR estimates over time
 - Visualizes **return distributions** with empirical probability ranges
-- Tracks **exceedances, streaks, and transitions** — counting how often actual losses exceeded the VaR threshold
+- Studies **return percentiles, streaks, and state transitions** — up/down/zero-day counts, runs of consecutive up or down days, and the probability of one day's direction carrying into the next
+- Tracks **exceedances** — counting how often actual losses exceeded the VaR threshold
 - Maps **key historical events** (political crises, devaluations, economic shocks) directly on the charts
 
 ---
@@ -62,7 +63,8 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
 - 📋 **Summary tables** with:
   - VaR values by method and confidence level
   - Exceedance counts and percentages
-  - Streak analysis and state transitions
+  - Return percentile breakdown
+  - Streak analysis and state transitions (up/down run lengths, day-to-day transition probabilities)
 
 The notebook re-generates these on every run; the `outputs/` folder holds a curated,
 ready-to-view copy from the bundled sample dataset:
