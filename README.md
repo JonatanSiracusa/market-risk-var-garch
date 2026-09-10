@@ -4,7 +4,6 @@
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white"/>
   <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white"/>
-  <img src="https://img.shields.io/badge/status-90%25%20complete-yellow?style=for-the-badge"/>
 </p>
 
 Quantitative market risk analysis using multiple VaR methodologies and GARCH volatility modeling, applied to **GGAL** (Grupo Financiero Galicia) from mid-2000 to present — covering more than two decades of Argentine market history, including some of the most severe financial crises in the country's history.
@@ -46,6 +45,12 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
 
 ---
 
+## Preview
+
+![Historical return distribution with VaR thresholds — GGAL](images/var_historical_ggal.png)
+
+---
+
 ## Results & outputs
 
 - 📊 **Interactive Bloomberg-style charts** (Plotly) showing:
@@ -82,13 +87,15 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
 market-risk-var-garch/
 │
 ├── notebooks/
-│   └── var_garch_analysis.ipynb   # Main analysis notebook
+│   ├── var_garch_analysis.ipynb   # Main analysis notebook
+│   └── hechos_relevantes.xlsx     # Argentine macro/political events, mapped onto the charts
 │
 ├── src/
-│   └── (core Python modules and helper functions)
+│   ├── ticker_data.py             # Price download and returns/volatility helpers
+│   └── utils.py                   # Project I/O helpers (save/load datasets)
 │
 ├── data/
-│   └── (auto-downloaded via yfinance)
+│   └── prices_20190603-20260401_1d_20260404_053546.xlsx   # bundled sample dataset (GGAL)
 │
 ├── images/
 │   └── (exported chart previews)
@@ -112,6 +119,10 @@ pip install -r requirements.txt
 jupyter notebook notebooks/var_garch_analysis.ipynb
 ```
 
+The notebook ships configured to load the bundled sample dataset (`data/`), so it runs
+out of the box without hitting Yahoo Finance. To re-download live data instead, set
+`DOWNLOAD_DATA = True` and `LOAD_DATA_FROM_FILE = False` in the data-loading cell.
+
 ---
 
 ## Methodology note
@@ -127,12 +138,6 @@ Each VaR methodology makes different assumptions:
 | GARCH | Dynamic (time-varying) | Configurable |
 
 GARCH-based VaR is particularly relevant in markets with **volatility clustering** — periods of high volatility tend to be followed by more high volatility. Argentine equity markets exhibit this behavior intensely.
-
----
-
-## Status
-
-🟡 **90% complete** — core analysis and visualizations are functional. Final polish in progress.
 
 ---
 

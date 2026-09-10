@@ -20,11 +20,12 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
-# Data files (auto-downloaded)
+# Data files (auto-downloaded), except the bundled sample dataset
 data/*.csv
 data/*.parquet
 data/*.xlsx
 data/*.json
+!data/prices_20190603-20260401_1d_20260404_053546.xlsx
 
 # OS
 .DS_Store
