@@ -64,6 +64,20 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
   - Exceedance counts and percentages
   - Streak analysis and state transitions
 
+The notebook re-generates these on every run; the `outputs/` folder holds a curated,
+ready-to-view copy from the bundled sample dataset:
+
+| File | What it shows |
+|---|---|
+| [`var_with_events.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_with_events.html) | Price/returns with VaR bands, Argentine macro/political events overlaid |
+| [`var_prices_returns.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_prices_returns.html) | Historical price and returns, no event overlay |
+| [`volatility_comparison.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/volatility_comparison.html) | Simple, EWMA (RiskMetrics), and GARCH(1,1) conditional volatility, side by side |
+| `returns_analysis.xlsx` | Return percentiles, up/down/zero-day counts, and streak/transition analysis |
+| `return_frequencies.xlsx` | Binned empirical return distribution behind the histogram in the notebook |
+
+(GitHub can't render `.html` inline, so the table links go through `htmlpreview.github.io`;
+clone the repo and open the files directly for the same result without a third party.)
+
 ---
 
 ## Tech stack
@@ -96,6 +110,13 @@ market-risk-var-garch/
 │
 ├── data/
 │   └── prices_20190603-20260401_1d_20260404_053546.xlsx   # bundled sample dataset (GGAL)
+│
+├── outputs/
+│   ├── var_with_events.html       # Interactive: VaR + historical events overlay
+│   ├── var_prices_returns.html    # Interactive: price and returns
+│   ├── volatility_comparison.html # Interactive: simple vs. EWMA vs. GARCH volatility
+│   ├── returns_analysis.xlsx      # Percentiles, up/down counts, streaks and transitions
+│   └── return_frequencies.xlsx    # Binned empirical return distribution
 │
 ├── images/
 │   └── (exported chart previews)

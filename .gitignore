@@ -27,6 +27,12 @@ data/*.xlsx
 data/*.json
 !data/prices_20190603-20260401_1d_20260404_053546.xlsx
 
+# Re-run exports land here by default; the curated copies live in outputs/
+notebooks/*.html
+notebooks/Var_Hist_*.png
+notebooks/analisis_retornos.xlsx
+notebooks/frecuencias.xlsx
+
 # OS
 .DS_Store
 Thumbs.db
