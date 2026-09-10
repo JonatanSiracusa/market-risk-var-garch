@@ -69,16 +69,35 @@ This makes GGAL an exceptionally demanding test case for risk models — far mor
 The notebook re-generates these on every run; the `outputs/` folder holds a curated,
 ready-to-view copy from the bundled sample dataset:
 
+### VaR with historical events overlay
+
+[![VaR with events](images/output_var_with_events.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_with_events.html)
+
+Price/returns with VaR bands, Argentine macro/political events overlaid. [Open the interactive version →](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_with_events.html)
+
+### VaR — price and returns
+
+[![VaR prices and returns](images/output_var_prices_returns.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_prices_returns.html)
+
+Historical price and returns, no event overlay. [Open the interactive version →](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_prices_returns.html)
+
+### Volatility comparison
+
+[![Volatility comparison](images/output_volatility_comparison.png)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/volatility_comparison.html)
+
+Simple, moving-average, EWMA (RiskMetrics), and GARCH(1,1) conditional/forecast volatility, side by side. [Open the interactive version →](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/volatility_comparison.html)
+
+### Summary tables
+
 | File | What it shows |
 |---|---|
-| [`var_with_events.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_with_events.html) | Price/returns with VaR bands, Argentine macro/political events overlaid |
-| [`var_prices_returns.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/var_prices_returns.html) | Historical price and returns, no event overlay |
-| [`volatility_comparison.html`](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JonatanSiracusa/market-risk-var-garch/main/outputs/volatility_comparison.html) | Simple, EWMA (RiskMetrics), and GARCH(1,1) conditional volatility, side by side |
 | `returns_analysis.xlsx` | Return percentiles, up/down/zero-day counts, and streak/transition analysis |
 | `return_frequencies.xlsx` | Binned empirical return distribution behind the histogram in the notebook |
 
-(GitHub can't render `.html` inline, so the table links go through `htmlpreview.github.io`;
-clone the repo and open the files directly for the same result without a third party.)
+(The images above are static snapshots; the linked `.html` files are the actual interactive
+Plotly charts — zoom, pan, and hover for exact values. GitHub can't render `.html` inline, so
+the links go through `htmlpreview.github.io`; clone the repo and open the files directly for
+the same result without a third party.)
 
 ---
 
@@ -121,7 +140,10 @@ market-risk-var-garch/
 │   └── return_frequencies.xlsx    # Binned empirical return distribution
 │
 ├── images/
-│   └── (exported chart previews)
+│   ├── var_historical_ggal.png         # Empirical return distribution with VaR thresholds
+│   ├── output_var_with_events.png      # Static snapshot of outputs/var_with_events.html
+│   ├── output_var_prices_returns.png   # Static snapshot of outputs/var_prices_returns.html
+│   └── output_volatility_comparison.png # Static snapshot of outputs/volatility_comparison.html
 │
 └── README.md
 ```
